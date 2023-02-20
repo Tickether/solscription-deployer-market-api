@@ -2,9 +2,8 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const WithdrawalSchema = new mongoose.Schema({
-    contract: {
-        type: Schema.ObjectId,
-        ref: 'Contract',
+    contractAddress: {
+        type: String,
         required: true,
     },
     currency: {

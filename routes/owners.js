@@ -1,19 +1,23 @@
 import express from 'express';
-import { getOwner, getOwners, updateOwner } from '../controllers/owner.js';
+import { createOwner, getOwner, getOwners, getOwnerSolscriptions, updateOwner } from '../controllers/owner.js';
 
 
 const router = express.Router();
 
+//CREATE
+router.post('/', createOwner);
 
 //UPDATE
-router.put('/:id', updateOwner);
+router.put('/:ownerwallet', updateOwner);
 
 
 //GET
-router.get('/:id', getOwner);
+router.get('/:ownerwallet', getOwner);
 
 //GET ALL
 router.get('/', getOwners);
+
+router.get('/contracts/:ownerwallet', getOwnerSolscriptions)
 
 
 

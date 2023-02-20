@@ -5,19 +5,19 @@ import { deploySolscription, getSolscription, getSolscriptions, getSolscriptionW
 const router = express.Router();
 
 //CREATE
-router.post('/:ownerid', deploySolscription);
+router.post('/:owneraddress', deploySolscription);
 
 //UPDATE
-router.put('/:id', updateSolscription);
+router.put('/:ownerwallet', updateSolscription);
 
 
 //GET
-router.get('/:id', getSolscription);
+router.get('/:contractaddress', getSolscription);
 
 //GET ALL
 router.get('/', getSolscriptions);
 
 
-router.get('/withdrawals/:id', getSolscriptionWithdrawals)
+router.get('/withdrawals/:contractaddress', getSolscriptionWithdrawals)
 
 export default router
