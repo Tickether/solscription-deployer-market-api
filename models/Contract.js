@@ -16,10 +16,13 @@ const ContractSchema = new mongoose.Schema({
     },
     deployTxn: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     contractAddress: {
         type: String,
+        required: true,
+        unique: true
     },
     subs: {
         type: [String]

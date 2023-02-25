@@ -1,5 +1,5 @@
 import Withdrawal from "../models/Withdrawal.js";
-import Contract from '../models/Contract';
+import Contract from '../models/Contract.js';
 
 export const createWithdrawal = async (req, res, next) => {
     const contractId = req.params.contractid;

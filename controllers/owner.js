@@ -1,5 +1,5 @@
-import Contract from '../models/Contract';
-import Owner from '../models/Owner';
+import Contract from '../models/Contract.js';
+import Owner from '../models/Owner.js';
 
 export const createOwner = async (req, res, next) => {
 
@@ -30,7 +30,7 @@ export const updateOwner = async (req, res, next) => {
 export const getOwner = async (req, res, next) => {
     try{
         const owner = await Owner.findOne(
-            {walletAdress: req.params.ownerwallet}
+            {walletAddress: req.params.ownerwallet}
         );
         res.status(200).json(owner);
     } catch(err) {
@@ -48,11 +48,12 @@ export const getOwners = async (req, res, next) => {
 }
 
 export const getOwnerSolscriptions = async (req, res, next) =>{
+    
     try{
-        const owner = await Owner.findOne({owned: req.params.ownerwallet})
-        const list = await Promise.all(
-            owner.contract.map(ownerWallet=>{
-                return Contract.findOne({owner: ownerWallet});
+        const owner = await Owner.findOne({walletAddress: req.params.ownerwallet})
+        const list = await Promise.all(            
+            owner.owned.map(contractaddress=>{
+                return Contract.findOne({contractAddress: contractaddress});
             })
         );
         res.status(200).json(list)

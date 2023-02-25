@@ -5,10 +5,10 @@ import { deploySolscription, getSolscription, getSolscriptions, getSolscriptionW
 const router = express.Router();
 
 //CREATE
-router.post('/:owneraddress', deploySolscription);
+router.post('/:ownerwallet', deploySolscription);
 
 //UPDATE
-router.put('/:ownerwallet', updateSolscription);
+router.put('/:contractaddress/:ownerwallet/:newownerwallet', updateSolscription);
 
 
 //GET

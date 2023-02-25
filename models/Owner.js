@@ -4,7 +4,6 @@ const { Schema } = mongoose;
 const OwnerSchema = new mongoose.Schema({
     walletAddress: {
         type: String,
-        required: true,
         unique: true
     },
     username: {
