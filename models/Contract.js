@@ -14,10 +14,14 @@ const ContractSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    chainID: {
+        type: Number,
+        required: true
+    },
     deployTxn: {
         type: String,
         required: true,
-        unique: true
+        unique: true 
     },
     contractAddress: {
         type: String,

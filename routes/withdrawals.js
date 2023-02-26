@@ -1,5 +1,5 @@
 import express from 'express';
-import { createWithdrawal } from '../controllers/Withdrawal.js';
+import { createWithdrawal } from '../controllers/withdrawal.js';
 
 
 const router = express.Router();
