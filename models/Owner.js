@@ -15,7 +15,7 @@ const OwnerSchema = new mongoose.Schema({
     },
     created: {
         type: [String]
-    },
+    }
 });
 
 export default mongoose.model('Owner', OwnerSchema)
