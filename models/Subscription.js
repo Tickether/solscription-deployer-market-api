@@ -23,6 +23,10 @@ const SubscriptionSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    approved: {
+        type: Boolean,
+        default: false
+    },
     marketAt:{
         type: Date,
         default:Date.now(),

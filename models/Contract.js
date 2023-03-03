@@ -28,7 +28,10 @@ const ContractSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    subs: {
+    members: {
+        type: [String]
+    },
+    subscriptions: {
         type: [String]
     },
     withdrawals: {

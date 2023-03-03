@@ -13,10 +13,10 @@ const SubscriberSchema = new mongoose.Schema({
     bio: {
         type: String
     },
-    subscribed: {
+    memberships: {
         type: [String]
     },
-    memberAt:{
+    subscriberAt:{
         type: Date,
         default:Date.now(),
     }

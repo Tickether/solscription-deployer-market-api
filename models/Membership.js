@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const SubscribedSchema = new mongoose.Schema({
+const MembershipSchema = new mongoose.Schema({
     
     walletAddress: {
         type: String,
@@ -11,8 +11,12 @@ const SubscribedSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    subsTxn: {
+    membersTxn: {
         type: String,
+        require: true
+    },
+    membersToken: {
+        type: Number,
         require: true
     },
     chain: {
@@ -23,12 +27,9 @@ const SubscribedSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    subscribedAt:{
-        type: Date,
-    },
-    expiryAt:{
+    membersAt:{
         type: Date,
     }
 });
 
-export default mongoose.model('Subscribed', SubscribedSchema)
+export default mongoose.model('Membership', MembershipSchema)
