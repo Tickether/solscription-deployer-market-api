@@ -16,7 +16,7 @@ export const createOwner = async (req, res, next) => {
 export const updateOwner = async (req, res, next) => {
     try{
         const updateOwner = await Owner.findOneAndUpdate(
-            {walletAdress: req.params.ownerwallet}, 
+            {walletAddress: req.params.ownerwallet}, 
             {$set: req.body}, 
             {new: true}
         );

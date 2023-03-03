@@ -28,10 +28,14 @@ const ContractSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    members: {
+    market:{
+        type: Boolean,
+        default: false
+    },
+    memberships: {
         type: [String]
     },
-    subscriptions: {
+    subscribed: {
         type: [String]
     },
     withdrawals: {

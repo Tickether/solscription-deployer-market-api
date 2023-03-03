@@ -5,6 +5,10 @@ import cors from 'cors'
 import contractsRoute from './routes/contracts.js'
 import ownersRoute from './routes/owners.js'
 import withdrawalsRoute from './routes/withdrawals.js'
+import membershipsRoute from './routes/memberships.js'
+import subscribersRoute from './routes/subscribers.js'
+import subscribesRoute from './routes/subscribes.js'
+import subscriptionsRoute from './routes/subscriptions.js'
 
 
 const app = express()
@@ -30,6 +34,10 @@ app.use(express.json());
 app.use('/api/contracts', contractsRoute);
 app.use('/api/owners', ownersRoute);
 app.use('/api/withdrawals', withdrawalsRoute);
+app.use('/api/memberships', membershipsRoute);
+app.use('/api/subscribers', subscribersRoute);
+app.use('/api/subscribes', subscribesRoute);
+app.use('/api/subscriptions', subscriptionsRoute);
 
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500;

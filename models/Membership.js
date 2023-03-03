@@ -3,6 +3,11 @@ const { Schema } = mongoose;
 
 const MembershipSchema = new mongoose.Schema({
     
+    membersTxn: {
+        type: String,
+        require: true,
+        unique: true
+    },
     walletAddress: {
         type: String,
         required: true
@@ -10,10 +15,6 @@ const MembershipSchema = new mongoose.Schema({
     contractAddress: {
         type: String,
         required: true,
-    },
-    membersTxn: {
-        type: String,
-        require: true
     },
     membersToken: {
         type: Number,
@@ -26,6 +27,9 @@ const MembershipSchema = new mongoose.Schema({
     chainID: {
         type: String,
         required: true
+    },
+    subscribed: {
+        type: [String]
     },
     membersAt:{
         type: Date,
