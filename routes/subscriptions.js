@@ -1,5 +1,5 @@
 import express from 'express';
-import { createSubscription, getSubscription, getSubscriptions, updateSubscription } from '../controllers/subscription.js';
+import { createSubscription, getSubscription, getSubscriptionsByName, updateSubscription } from '../controllers/subscription.js';
 
 const router = express.Router();
 
@@ -14,7 +14,7 @@ router.put('/:contractaddress', updateSubscription);
 router.get('/:contractaddress', getSubscription);
 
 //GET ALL
-router.get('/', getSubscriptions);
+router.get('/', getSubscriptionsByName);
 
 
 

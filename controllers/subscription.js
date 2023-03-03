@@ -36,9 +36,9 @@ export const getSubscription = async (req, res, next) => {
     }
 }
 
-export const getSubscriptions = async (req, res, next) => {
+export const getSubscriptionsByName = async (req, res, next) => {
     try{
-        const subscriptions = await Subscription.find({name: req.query});
+        const subscriptions = await Subscription.find({name: req.query.name});
         res.status(200).json(subscriptions);
     } catch(err) {
         next(err);
