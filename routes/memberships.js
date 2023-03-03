@@ -1,5 +1,5 @@
 import express from 'express';
-import { createMembership, getMembership, getMemberships, updateMembership } from '../controllers/Membership.js';
+import { createMembership, getMembership, getMemberships, updateMembership } from '../controllers/membership.js';
 
 const router = express.Router();
 
