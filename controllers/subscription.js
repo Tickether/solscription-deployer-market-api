@@ -1,11 +1,21 @@
+import Merchant from "../models/Merchant.js";
 import Subscription from "../models/Subscription.js";
 
 export const createSubscription = async (req, res, next) => {
-
+    const name = req.params.name;
     const newSubscription = new Subscription(req.body)
 
     try{
         const savedSubscription = await newSubscription.save();
+        try {
+
+            await Merchant.findOneAndUpdate({ name: name }, {
+                $push: { subscriptions: savedContract.contractAddress },
+            });
+            
+        } catch (err) {
+            next(err);
+        }
         res.status(200).json(savedSubscription)
     } catch(err) {
         next(err);

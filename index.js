@@ -9,6 +9,7 @@ import membershipsRoute from './routes/memberships.js'
 import subscribersRoute from './routes/subscribers.js'
 import subscribesRoute from './routes/subscribes.js'
 import subscriptionsRoute from './routes/subscriptions.js'
+import merchantsRoute from './routes/merchants.js'
 
 
 const app = express()
@@ -38,6 +39,7 @@ app.use('/api/memberships', membershipsRoute);
 app.use('/api/subscribers', subscribersRoute);
 app.use('/api/subscribes', subscribesRoute);
 app.use('/api/subscriptions', subscriptionsRoute);
+app.use('/api/merchants', merchantsRoute);
 
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500;

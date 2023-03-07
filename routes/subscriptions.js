@@ -4,7 +4,7 @@ import { createSubscription, getSubscription, getSubscriptionsByName, updateSubs
 const router = express.Router();
 
 //CREATE
-router.post('/', createSubscription);
+router.post('/:name', createSubscription);
 
 //UPDATE
 router.put('/:contractaddress', updateSubscription);
